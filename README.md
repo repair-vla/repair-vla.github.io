@@ -10,7 +10,7 @@ Run `python -m http.server 8000` from this directory and visit `http://localhost
 
 ## GitHub Pages
 
-For an organization homepage, name this repository `<organization>.github.io`. In Settings → Pages, choose **Deploy from a branch**, then select **main** and **/ (root)**. The `.nojekyll` file allows the static assets to be served directly.
+The organization homepage repository is `repair-vla/repair-vla.github.io`. In Settings → Pages, choose **Deploy from a branch**, then select **main** and **/ (root)**. The `.nojekyll` file allows the static assets to be served directly.
 
 ## Files
 
