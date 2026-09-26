@@ -1,6 +1,61 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="REPAIR: Value-guided on-policy distillation for long-horizon VLA repair. Anonymous research project."><title>REPAIR · Beyond Policy Patches</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23181b20'/%3E%3Ctext x='7' y='25' font-family='Georgia' font-size='27' fill='%23ffc64a'%3ER%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"></head>
-<body><header id="header"><nav aria-label="Main navigation"><a class="wordmark" href="#home">REPAIR<span>.</span></a><div class="navlinks"><a href="#home">Home</a><a href="#demos">Demos</a></div><span class="anonymous">Anonymous submission</span></nav></header>
-<main><section class="hero" id="home"><video id="heroVideo" class="hero-video" poster="assets/hero.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Montage of real-robot task execution"><source src="assets/hero.mp4" type="video/mp4"></video><div class="shade"></div><div class="hero-content"><p class="eyebrow">VALUE-GUIDED ON-POLICY DISTILLATION</p><p class="project-name">REPAIR<span>.</span></p><h1>Beyond Policy Patches</h1><p class="paper-subtitle">Value-Guided On-Policy Distillation<br class="desktop-break"> for Long-Horizon VLA Repair</p><p class="summary">Distilling an RL specialist into a single VLA policy. <br>Learning precision from experts. Repairing errors on the learner’s own trajectories.</p><div class="authors">Anonymous authors <span>·</span> Under double-blind review</div><a class="primary" href="#demos">Explore demonstrations <span aria-hidden="true">↘</span></a></div><div class="hero-bottom"><a href="#demos">REAL-WORLD EXECUTION <span aria-hidden="true">↓</span></a><button id="heroPause" aria-label="Pause background video">Ⅱ <span>Pause video</span></button></div></section>
-<section id="demos" class="demos"><div class="section-heading"><div><p class="eyebrow">REPAIR IN ACTION</p><h2>Real-world demonstrations<span>.</span></h2><p class="section-description">From precise insertion to coordinated manipulation.</p></div><div class="carousel-controls"><button id="prev" aria-label="Previous demonstration">←</button><button id="motion" aria-label="Pause carousel" aria-pressed="false">Ⅱ</button><button id="next" aria-label="Next demonstration">→</button></div></div><div class="marquee" id="marquee" aria-label="Robot demonstrations"><div class="track" id="track"></div></div><div class="demo-foot"><span>Six tasks. One distilled policy.</span><span>Hover to pause · Select a video to watch</span></div></section></main><footer><a class="wordmark" href="#home">REPAIR<span>.</span></a><span>Anonymous authors · Research project</span><a href="#home">Back to top ↑</a></footer>
-<dialog id="viewer"><div class="dialog-header"><h2 id="videoTitle"></h2><button id="close" aria-label="Close video">✕</button></div><video id="fullVideo" controls playsinline></video></dialog><script src="app.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="REPAIR: Beyond Policy Patches — Distilling RL Specialists into Vision-Language-Action Policies. Anonymous research project.">
+  <title>REPAIR · Beyond Policy Patches: Distilling RL Specialists into Vision-Language-Action Policies</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23181b20'/%3E%3Ctext x='7' y='25' font-family='Georgia' font-size='27' fill='%23ffc64a'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header">
+    <nav aria-label="Main navigation">
+      <a class="wordmark" href="#home">REPAIR<span>.</span></a>
+      <div class="navlinks"><a href="#home">Home</a><a href="#demos">Demos</a><a href="#abstract">Abstract</a></div>
+      <span class="anonymous">Anonymous submission</span>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <video id="heroVideo" class="hero-video" poster="assets/hero.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Six complete real-robot demonstrations, played in sequence"><source src="assets/hero-full.mp4" type="video/mp4"></video>
+      <div class="shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">VALUE-GUIDED POLICY DISTILLATION</p>
+        <p class="project-name">REPAIR<span>.</span></p>
+        <h1>Beyond Policy Patches:<span class="paper-subtitle">Distilling RL Specialists into<br class="desktop-break"> Vision-Language-Action Policies</span></h1>
+        <p class="summary">Transferring specialist expertise into a single VLA policy. <br>Offline initialization. On-policy refinement. Specialist-free deployment.</p>
+        <div class="authors">Anonymous authors <span>·</span> Under double-blind review</div>
+        <a class="primary" href="#demos">Explore demonstrations <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-bottom">
+        <a href="#demos">FULL TASK SEQUENCE <span aria-hidden="true">↓</span></a>
+        <span id="heroTask" class="hero-task">Dual-Arm Peg Insertion · 1 / 6</span>
+        <button id="heroPause" aria-label="Pause background video">Ⅱ <span>Pause video</span></button>
+      </div>
+    </section>
+    <section id="demos" class="demos">
+      <div class="section-heading">
+        <div><p class="eyebrow">REPAIR IN ACTION</p><h2>Real-world demonstrations<span>.</span></h2><p class="section-description">From precise insertion to coordinated manipulation. Complete task recordings play in a loop.</p></div>
+        <div class="carousel-controls"><button id="prev" aria-label="Previous task">←</button><button id="motion" aria-label="Pause carousel" aria-pressed="false">Ⅱ</button><button id="next" aria-label="Next task">→</button></div>
+      </div>
+      <div class="marquee" id="marquee" aria-label="Robot demonstrations"><div class="track" id="track"></div></div>
+      <div class="demo-foot"><span>Six tasks. One distilled policy.</span><span>Hover to pause scrolling · Select a task to watch its recordings</span></div>
+    </section>
+    <section id="abstract" class="abstract-section" aria-labelledby="abstractTitle">
+      <div class="abstract-heading"><p class="eyebrow">THE PAPER</p><h2 id="abstractTitle">Abstract<span>.</span></h2></div>
+      <div class="abstract-copy">
+        <p>Vision-language-action (VLA) policies can handle noncritical stages of long-horizon manipulation yet fail during short precision-critical phases. Lightweight reinforcement learning (RL) specialists can address these failures without directly applying RL to the full VLA, but retain auxiliary controllers and switching mechanisms at deployment. We study how to transfer their capabilities into a single flow-matching VLA. Direct imitation of specialist rollouts can reproduce action jitter and leave the VLA unprepared for states encountered during its own execution.</p>
+        <p>We introduce <strong>REPAIR</strong>, a value-guided distillation framework that combines offline initialization with on-policy refinement. At each critical-phase observation, REPAIR queries the corresponding specialist for multiple action candidates and weights them using its critic to construct a supervision distribution. A shared weighted flow-matching objective trains the VLA first on observations from specialist-assisted rollouts, then on observations collected through its own execution. Specialists provide supervision without taking control during on-policy collection and are removed at deployment. Across six real-robot tasks with 30 evaluation trials per task, REPAIR achieves 100% success on all six tasks, with lower mean end-effector jerk than specialist-assisted execution on every task. Additional visual results are available at <a href="https://repair-vla.github.io/">https://repair-vla.github.io/</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer><a class="wordmark" href="#home">REPAIR<span>.</span></a><span>Anonymous authors · Research project</span><a href="#home">Back to top ↑</a></footer>
+  <dialog id="viewer" aria-labelledby="videoTitle">
+    <div class="dialog-header"><h2 id="videoTitle"></h2><button id="close" aria-label="Close video">✕</button></div>
+    <video id="fullVideo" controls playsinline></video>
+    <div class="playlist-controls"><button id="clipPrev" aria-label="Previous recording">← Previous</button><span id="clipPosition" aria-live="polite"></span><button id="clipNext" aria-label="Next recording">Next →</button></div>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
