@@ -19,7 +19,7 @@ The organization homepage repository is `repair-vla/repair-vla.github.io`. In Se
 - `index.html`: homepage and demonstration layout.
 - `style.css`: typography, colors, and responsive styling.
 - `app.js`: carousel and video player.
-- `comparison.css`, `comparison.js`, `comparison-data.js`: task selection, synchronized playback, phase navigation, and captions.
+- `comparison.css`, `comparison.js`, `comparison-data.js`, `rlt-comparison-data.js`: subsection and task selection, synchronized playback, phase navigation, and captions.
 - `assets/`: web-ready videos and poster images.
 
 The Overview section contains the complete 3:38 introduction at 1080p, with narration, optional English captions, and native playback controls. It starts only when the visitor presses play. The video and audio are preserved without re-encoding; source metadata is removed.
@@ -39,7 +39,11 @@ Task playlists advance only on the video's `ended` event and wrap after the last
 
 ## Comparison
 
-The section follows Demos. Six task selectors show a fixed failure montage on the left and the corresponding successful REPAIR excerpts on the right. On narrow screens, the two videos stack vertically. Shared play/pause, seek, restart, phase navigation, and fullscreen controls keep the pair synchronized. Playback starts on request and loops as a pair; leaving the section pauses it.
+The section follows Demos and contains **SFT vs REPAIR** and **RLT vs REPAIR** subsections. On narrow screens, each video pair stacks vertically. Shared play/pause, seek, restart, chapter navigation, and fullscreen controls keep each pair synchronized. Playback starts on request and loops as a pair; leaving a subsection pauses it. Starting either comparison pauses the other.
+
+### SFT vs REPAIR
+
+Six task selectors show a fixed SFT failure montage on the left and the corresponding successful REPAIR excerpts on the right.
 
 All eight supplied failure clips are retained in full. The success excerpts are selected from the corresponding successful recordings. Each phase has a one-second opening hold, followed by the footage at original speed. A shorter clip holds its last frame until the paired phase ends; the hold is labeled in the video. Each phase also has a 0.8-second closing hold. Phase numbers and names are embedded above the uncropped footage. Comparison videos are silent H.264 at 25 fps, with a 1280 × 720 picture inside a 1280 × 800 frame, and have source metadata removed.
 
@@ -53,3 +57,14 @@ All eight supplied failure clips are retained in full. The success excerpts are 
 | Grocery Bagging | `bagging_success.mp4` | Phase 1: 8–18 | 28.08 s |
 
 Grocery Bagging currently includes video for Phase 1 only. The complete failure descriptions for Phases 2 and 3 are shown with an explicit video-unavailable label; the Phase 1 clip is not reused to stand in for the missing phases.
+
+### RLT vs REPAIR
+
+The dual-arm peg insertion comparison uses the complete supplied successful clips, with RLT on the left and REPAIR on the right:
+
+- RLT: `dual_peg_insert_rlt_success_from30s_5x_noaudio.mp4` (7.92 s).
+- REPAIR: `dual_peg_insert_success_2_from20s_5x_noaudio.mp4` (3.76 s).
+
+Both supplied clips are already at 5× speed. Their 1–2 s windows are slowed by a factor of five, so this part plays at 1× real time on both sides. The RLT window is labeled “Policy-switch jitter”; the matched REPAIR window and playback speeds are also labeled. Chapter controls jump to the full comparison, switching detail, or execution after the switch.
+
+The replay window occupies playback seconds 1–6. Outside it, the supplied speed is preserved. RLT finishes at 11.92 s; REPAIR finishes at 7.76 s and holds its labeled final frame until 11.92 s. These playback times include the slow-motion window and are not raw task-completion measurements. Both silent outputs use the same 1280 × 800 format as the SFT comparison and have source metadata removed.

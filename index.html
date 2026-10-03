@@ -58,17 +58,20 @@
     </section>
     <section id="comparison" class="comparison-section" aria-labelledby="comparisonTitle">
       <div class="section-heading">
-        <div><p class="eyebrow">A CLOSER LOOK AT CRITICAL PHASES</p><h2 id="comparisonTitle">Comparison<span>.</span></h2><p class="section-description">Failure cases and successful REPAIR executions, side by side.</p></div>
+        <div><p class="eyebrow">A CLOSER LOOK AT CRITICAL PHASES</p><h2 id="comparisonTitle">Comparison<span>.</span></h2><p class="section-description">SFT and RLT baselines compared with REPAIR, side by side.</p></div>
       </div>
       <div class="comparison-content">
+        <nav class="comparison-subnav" aria-label="Comparison subsections"><a href="#sft-comparison">01 <span>SFT vs REPAIR</span></a><a href="#rlt-comparison">02 <span>RLT vs REPAIR</span></a></nav>
+        <section id="sft-comparison" class="comparison-subsection" aria-labelledby="sftComparisonTitle">
+        <div class="comparison-subsection-heading"><span class="comparison-index">01</span><div><h3 id="sftComparisonTitle">SFT vs REPAIR</h3><p>Precision-critical failure cases across six real-robot tasks.</p></div></div>
         <div id="comparisonTasks" class="comparison-tasks" role="group" aria-label="Choose a comparison task"></div>
-        <div class="comparison-task-heading"><h3 id="comparisonTaskTitle">Stick Pick-and-Place</h3><span id="comparisonPhaseCount"></span></div>
+        <div class="comparison-task-heading"><h4 id="comparisonTaskTitle">Stick Pick-and-Place</h4><span id="comparisonPhaseCount"></span></div>
         <div id="comparisonPhases" class="comparison-phases" role="group" aria-label="Jump to a phase"></div>
         <p id="comparisonAvailability" class="comparison-availability" hidden></p>
         <div id="comparisonMedia" class="comparison-media">
           <div class="comparison-pair">
             <figure class="comparison-figure failure-side">
-              <figcaption><span class="comparison-dot" aria-hidden="true"></span>Failure case</figcaption>
+              <figcaption><span class="comparison-dot" aria-hidden="true"></span>SFT <span class="comparison-success-label">· Failure case</span></figcaption>
               <video id="comparisonFailure" muted playsinline preload="none" aria-label="Failure comparison video" aria-describedby="comparisonFailureCaption"></video>
             </figure>
             <figure class="comparison-figure success-side">
@@ -87,10 +90,42 @@
         </div>
         <p class="comparison-note">Original playback speed. Phases start together; shorter clips hold their last frame until the next phase. Each pair loops together.</p>
         <div class="comparison-captions">
-          <div><h4>Failure modes</h4><div id="comparisonFailureCaption"></div></div>
-          <div><h4>Successful execution</h4><div id="comparisonSuccessCaption"></div></div>
+          <div><h5 class="comparison-caption-heading">SFT failure modes</h5><div id="comparisonFailureCaption"></div></div>
+          <div><h5 class="comparison-caption-heading">Successful REPAIR execution</h5><div id="comparisonSuccessCaption"></div></div>
         </div>
         <noscript><p>Enable JavaScript to choose a task and play the linked comparison videos.</p></noscript>
+        </section>
+        <section id="rlt-comparison" class="comparison-subsection" aria-labelledby="rltComparisonTitle">
+          <div class="comparison-subsection-heading"><span class="comparison-index">02</span><div><h3 id="rltComparisonTitle">RLT vs REPAIR</h3><p>Successful dual-arm insertion, with a closer look at switching jitter.</p></div></div>
+          <div class="comparison-task-heading"><h4 id="rltTaskTitle">Dual-Arm Peg Insertion</h4><span id="rltPhaseCount">Successful rollouts</span></div>
+          <div id="rltPhases" class="comparison-phases" role="group" aria-label="Jump to an RLT comparison moment"></div>
+          <div id="rltMedia" class="comparison-media">
+            <div class="comparison-pair">
+              <figure class="comparison-figure rlt-side">
+                <figcaption><span class="comparison-dot" aria-hidden="true"></span>RLT <span class="comparison-success-label">· Success with jitter</span></figcaption>
+                <video id="rltVideo" muted playsinline preload="none" aria-label="Successful RLT dual-arm peg insertion" aria-describedby="rltCaption"></video>
+              </figure>
+              <figure class="comparison-figure success-side">
+                <figcaption><span class="comparison-dot" aria-hidden="true"></span>REPAIR <span class="comparison-success-label">· Smooth success</span></figcaption>
+                <video id="rltRepairVideo" muted playsinline preload="none" aria-label="Successful REPAIR dual-arm peg insertion" aria-describedby="rltRepairCaption"></video>
+              </figure>
+            </div>
+            <div class="comparison-transport">
+              <button id="rltPlay" class="comparison-play" type="button" aria-label="Play both RLT comparison videos">▶ <span>Play both</span></button>
+              <button id="rltRestart" class="comparison-restart" type="button" aria-label="Restart both RLT comparison videos">↺ <span>Restart</span></button>
+              <input id="rltSeek" type="range" min="0" max="11.92" step="0.04" value="0" aria-label="RLT comparison playback position">
+              <output id="rltTime" for="rltSeek">0:00 / 0:11</output>
+              <button id="rltFullscreen" class="comparison-fullscreen" type="button" aria-label="Show RLT comparison full screen">⛶ <span>Full screen</span></button>
+            </div>
+            <p id="rltStatus" class="comparison-status" role="status" aria-live="polite"></p>
+          </div>
+          <p class="comparison-note">Both supplied clips are at 5× speed. The 1–2 s switching window is replayed 5× slower on both sides (1× real time), with the speed labeled in-frame. After REPAIR finishes, its final frame is held while RLT continues. Playback time includes this slow-motion window.</p>
+          <div class="comparison-captions">
+            <div id="rltCaption"><h5 class="comparison-caption-heading">RLT · Successful, but jittery</h5><p>RLT completes the task, but exhibits jitter during the policy switch, highlighted in slow motion. Oscillations from the compact MLP specialist persist during execution and prolong task completion.</p></div>
+            <div id="rltRepairCaption"><h5 class="comparison-caption-heading">REPAIR · Faster and smoother</h5><p>REPAIR completes the insertion more quickly with smoother motion. A single distilled VLA policy carries out the task without switching to a separate specialist.</p></div>
+          </div>
+          <noscript><p>Enable JavaScript to play the synchronized RLT and REPAIR comparison.</p></noscript>
+        </section>
       </div>
     </section>
     <section id="abstract" class="abstract-section" aria-labelledby="abstractTitle">
@@ -109,6 +144,7 @@
   </dialog>
   <script src="app.js"></script>
   <script src="comparison-data.js"></script>
+  <script src="rlt-comparison-data.js"></script>
   <script src="comparison.js"></script>
 </body>
 </html>

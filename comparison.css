@@ -8,7 +8,7 @@
 .comparison-tasks button[aria-pressed="true"]{background:#f7edda;border-color:#c49a47;color:#272a2d}
 .comparison-tasks button[aria-pressed="true"] span{color:#896214}
 .comparison-task-heading{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:18px}
-.comparison-task-heading h3{font:700 28px/1.25 Georgia,serif;margin:0;letter-spacing:-.02em}
+.comparison-task-heading h4{font:700 26px/1.25 Georgia,serif;margin:0;letter-spacing:-.02em}
 .comparison-task-heading>span{font-size:12px;color:#737875;white-space:nowrap}
 .comparison-phases{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
 .comparison-phases button{border:1px solid #d6d9d3;background:transparent;border-radius:4px;padding:9px 12px;font-size:13px;color:#565d5b;line-height:1.4}
@@ -33,10 +33,11 @@
 .comparison-status:empty{display:none}
 .comparison-note{color:#7b807b;font-size:12px;line-height:1.7;margin:15px 0 26px}
 .comparison-captions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
-.comparison-captions h4{margin:0 0 14px;text-transform:uppercase;font-size:11px;letter-spacing:.12em;color:#777c76}
+.comparison-caption-heading{margin:0 0 14px;text-transform:uppercase;font-size:11px;letter-spacing:.12em;color:#777c76}
+.comparison-captions>div>p{font-size:14px;line-height:1.8;color:#69716b;margin:0}
 .comparison-caption{margin-bottom:17px;padding-left:12px;border-left:2px solid #dedfd9}
 .comparison-caption.is-current{border-left-color:#c09a47}
-.comparison-caption h5{font-size:14px;font-weight:600;line-height:1.5;color:#373e3a;margin:0 0 5px}
+.comparison-caption h6{font-size:14px;font-weight:600;line-height:1.5;color:#373e3a;margin:0 0 5px}
 .comparison-caption p{font-size:14px;line-height:1.7;color:#69716b;margin:0}
 .comparison-caption small{display:block;margin-top:5px;font-size:11px;color:#8b8f88}
 .comparison-media:fullscreen{background:#151b1c;padding:24px;display:flex;flex-direction:column;justify-content:center;overflow:auto}
@@ -45,4 +46,16 @@
 .comparison-media:fullscreen .comparison-transport{margin-top:20px}
 .comparison-media:fullscreen .comparison-status{color:#edd293}
 @media(max-width:950px){.comparison-transport{gap:10px}.comparison-restart span,.comparison-fullscreen span{display:none}.comparison-tasks button{padding:13px 11px;font-size:13px;gap:8px}}
-@media(max-width:700px){.navlinks{gap:14px;flex-wrap:wrap}.comparison-section{padding-top:50px;padding-bottom:45px}.comparison-tasks{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:27px}.comparison-tasks button{align-items:flex-start;font-size:12px;min-height:64px}.comparison-tasks button span{margin-top:2px}.comparison-task-heading{display:block}.comparison-task-heading h3{font-size:25px}.comparison-task-heading>span{display:block;margin-top:9px}.comparison-pair,.comparison-captions{grid-template-columns:1fr;gap:18px}.comparison-phases{gap:7px}.comparison-phases button{font-size:12px}.comparison-transport{flex-wrap:wrap;gap:9px}.comparison-transport input{order:5;flex-basis:100%}.comparison-transport output{margin-left:auto;min-width:auto}.comparison-transport .comparison-play{min-width:98px}.comparison-note{margin-top:14px}.comparison-captions{gap:10px}.comparison-figure figcaption{padding:12px 14px}.comparison-media:fullscreen{padding:12px;justify-content:flex-start}.comparison-media:fullscreen .comparison-pair{gap:10px}.comparison-media:fullscreen .comparison-figure video{max-height:calc((100svh - 205px)/2)}.comparison-media:fullscreen .comparison-transport{margin-top:12px}}
+@media(max-width:700px){.navlinks{gap:14px;flex-wrap:wrap}.comparison-section{padding-top:50px;padding-bottom:45px}.comparison-tasks{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:27px}.comparison-tasks button{align-items:flex-start;font-size:12px;min-height:64px}.comparison-tasks button span{margin-top:2px}.comparison-task-heading{display:block}.comparison-task-heading h4{font-size:24px}.comparison-task-heading>span{display:block;margin-top:9px}.comparison-pair,.comparison-captions{grid-template-columns:1fr;gap:18px}.comparison-phases{gap:7px}.comparison-phases button{font-size:12px}.comparison-transport{flex-wrap:wrap;gap:9px}.comparison-transport input{order:5;flex-basis:100%}.comparison-transport output{margin-left:auto;min-width:auto}.comparison-transport .comparison-play{min-width:98px}.comparison-note{margin-top:14px}.comparison-captions{gap:10px}.comparison-figure figcaption{padding:12px 14px}.comparison-media:fullscreen{padding:12px;justify-content:flex-start}.comparison-media:fullscreen .comparison-pair{gap:10px}.comparison-media:fullscreen .comparison-figure video{max-height:calc((100svh - 205px)/2)}.comparison-media:fullscreen .comparison-transport{margin-top:12px}}
+
+.comparison-subnav{display:flex;max-width:none;min-height:0;margin:0 0 38px;padding:0;gap:28px;align-items:center;flex-wrap:wrap}
+.comparison-subnav a{display:flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.06em;color:#97732d;border-bottom:1px solid #d5c39e;padding-bottom:8px}
+.comparison-subnav a span{font-size:13px;letter-spacing:0;color:#424b45}
+.comparison-subnav a:hover span{color:#97732d}
+.comparison-subsection+.comparison-subsection{border-top:1px solid #dedfd7;margin-top:54px;padding-top:48px}
+.comparison-subsection-heading{display:flex;gap:15px;align-items:flex-start;margin-bottom:30px}
+.comparison-index{font-size:12px;font-weight:600;letter-spacing:.05em;color:#a78030;border:1px solid #d8c59c;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;flex-shrink:0;margin-top:2px}
+.comparison-subsection-heading h3{font:700 32px/1.2 Georgia,serif;letter-spacing:-.025em;margin:0}
+.comparison-subsection-heading p{font-size:14px;line-height:1.7;color:#71776f;margin:10px 0 0}
+.rlt-side .comparison-dot{background:#b38a38}
+@media(max-width:700px){.comparison-subnav{gap:20px;margin-bottom:29px}.comparison-subsection-heading{gap:11px;margin-bottom:24px}.comparison-subsection-heading h3{font-size:28px}.comparison-subsection-heading p{font-size:13px}.comparison-index{width:29px;height:29px;font-size:11px}.comparison-subsection+.comparison-subsection{margin-top:38px;padding-top:34px}}
