@@ -7,12 +7,13 @@
   <title>REPAIR · Beyond Policy Patches: Distilling RL Specialists into Vision-Language-Action Policies</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23181b20'/%3E%3Ctext x='7' y='25' font-family='Georgia' font-size='27' fill='%23ffc64a'%3ER%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="comparison.css">
 </head>
 <body>
   <header id="header">
     <nav aria-label="Main navigation">
       <a class="wordmark" href="#home">REPAIR<span>.</span></a>
-      <div class="navlinks"><a href="#home">Home</a><a href="#overview">Overview</a><a href="#demos">Demos</a><a href="#abstract">Abstract</a></div>
+      <div class="navlinks"><a href="#home">Home</a><a href="#overview">Overview</a><a href="#demos">Demos</a><a href="#comparison">Comparison</a><a href="#abstract">Abstract</a></div>
       <span class="anonymous">Anonymous submission</span>
     </nav>
   </header>
@@ -55,6 +56,43 @@
       <div class="marquee" id="marquee" aria-label="Robot demonstrations"><div class="track" id="track"></div></div>
       <div class="demo-foot"><span>Six tasks. One distilled policy.</span><span>Hover to pause scrolling · Select a task to watch its recordings</span></div>
     </section>
+    <section id="comparison" class="comparison-section" aria-labelledby="comparisonTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">A CLOSER LOOK AT CRITICAL PHASES</p><h2 id="comparisonTitle">Comparison<span>.</span></h2><p class="section-description">Failure cases and successful REPAIR executions, side by side.</p></div>
+      </div>
+      <div class="comparison-content">
+        <div id="comparisonTasks" class="comparison-tasks" role="group" aria-label="Choose a comparison task"></div>
+        <div class="comparison-task-heading"><h3 id="comparisonTaskTitle">Stick Pick-and-Place</h3><span id="comparisonPhaseCount"></span></div>
+        <div id="comparisonPhases" class="comparison-phases" role="group" aria-label="Jump to a phase"></div>
+        <p id="comparisonAvailability" class="comparison-availability" hidden></p>
+        <div id="comparisonMedia" class="comparison-media">
+          <div class="comparison-pair">
+            <figure class="comparison-figure failure-side">
+              <figcaption><span class="comparison-dot" aria-hidden="true"></span>Failure case</figcaption>
+              <video id="comparisonFailure" muted playsinline preload="none" aria-label="Failure comparison video" aria-describedby="comparisonFailureCaption"></video>
+            </figure>
+            <figure class="comparison-figure success-side">
+              <figcaption><span class="comparison-dot" aria-hidden="true"></span>REPAIR <span class="comparison-success-label">· Success</span></figcaption>
+              <video id="comparisonSuccess" muted playsinline preload="none" aria-label="Successful REPAIR comparison video" aria-describedby="comparisonSuccessCaption"></video>
+            </figure>
+          </div>
+          <div class="comparison-transport">
+            <button id="comparisonPlay" class="comparison-play" type="button" aria-label="Play both comparison videos">▶ <span>Play both</span></button>
+            <button id="comparisonRestart" class="comparison-restart" type="button" aria-label="Restart both comparison videos">↺ <span>Restart</span></button>
+            <input id="comparisonSeek" type="range" min="0" max="100" step="0.04" value="0" aria-label="Comparison playback position">
+            <output id="comparisonTime" for="comparisonSeek">0:00 / 0:00</output>
+            <button id="comparisonFullscreen" class="comparison-fullscreen" type="button" aria-label="Show comparison full screen">⛶ <span>Full screen</span></button>
+          </div>
+          <p id="comparisonStatus" class="comparison-status" role="status" aria-live="polite"></p>
+        </div>
+        <p class="comparison-note">Original playback speed. Phases start together; shorter clips hold their last frame until the next phase. Each pair loops together.</p>
+        <div class="comparison-captions">
+          <div><h4>Failure modes</h4><div id="comparisonFailureCaption"></div></div>
+          <div><h4>Successful execution</h4><div id="comparisonSuccessCaption"></div></div>
+        </div>
+        <noscript><p>Enable JavaScript to choose a task and play the linked comparison videos.</p></noscript>
+      </div>
+    </section>
     <section id="abstract" class="abstract-section" aria-labelledby="abstractTitle">
       <div class="abstract-heading"><p class="eyebrow">THE PAPER</p><h2 id="abstractTitle">Abstract<span>.</span></h2></div>
       <div class="abstract-copy">
@@ -70,5 +108,7 @@
     <div class="playlist-controls"><button id="clipPrev" aria-label="Previous recording">← Previous</button><span id="clipPosition" aria-live="polite"></span><button id="clipNext" aria-label="Next recording">Next →</button></div>
   </dialog>
   <script src="app.js"></script>
+  <script src="comparison-data.js"></script>
+  <script src="comparison.js"></script>
 </body>
 </html>
