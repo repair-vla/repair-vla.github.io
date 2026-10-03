@@ -113,13 +113,13 @@
             <div class="comparison-transport">
               <button id="rltPlay" class="comparison-play" type="button" aria-label="Play both RLT comparison videos">▶ <span>Play both</span></button>
               <button id="rltRestart" class="comparison-restart" type="button" aria-label="Restart both RLT comparison videos">↺ <span>Restart</span></button>
-              <input id="rltSeek" type="range" min="0" max="11.92" step="0.04" value="0" aria-label="RLT comparison playback position">
-              <output id="rltTime" for="rltSeek">0:00 / 0:11</output>
+              <input id="rltSeek" type="range" min="0" max="8.64" step="0.04" value="0" aria-label="RLT comparison playback position">
+              <output id="rltTime" for="rltSeek">0:00 / 0:08</output>
               <button id="rltFullscreen" class="comparison-fullscreen" type="button" aria-label="Show RLT comparison full screen">⛶ <span>Full screen</span></button>
             </div>
             <p id="rltStatus" class="comparison-status" role="status" aria-live="polite"></p>
           </div>
-          <p class="comparison-note">Both supplied clips are at 5× speed. The 1–2 s switching window is replayed 5× slower on both sides (1× real time), with the speed labeled in-frame. After REPAIR finishes, its final frame is held while RLT continues. Playback time includes this slow-motion window.</p>
+          <p class="comparison-note">Both supplied clips are at 5× speed. Only the latter half of the switching window (approximately 1.5–2 s) is replayed 5× slower on both sides (1× real time), with the speed labeled in-frame. Both excerpts end before gripper release; REPAIR's final frame is held while RLT continues. Playback time includes the slow-motion window.</p>
           <div class="comparison-captions">
             <div id="rltCaption"><h5 class="comparison-caption-heading">RLT · Successful, but jittery</h5><p>RLT completes the task, but exhibits jitter during the policy switch, highlighted in slow motion. Oscillations from the compact MLP specialist persist during execution and prolong task completion.</p></div>
             <div id="rltRepairCaption"><h5 class="comparison-caption-heading">REPAIR · Faster and smoother</h5><p>REPAIR completes the insertion more quickly with smoother motion. A single distilled VLA policy carries out the task without switching to a separate specialist.</p></div>
@@ -144,7 +144,7 @@
   </dialog>
   <script src="app.js"></script>
   <script src="comparison-data.js"></script>
-  <script src="rlt-comparison-data.js"></script>
+  <script src="rlt-comparison-data.js?v=2"></script>
   <script src="comparison.js"></script>
 </body>
 </html>

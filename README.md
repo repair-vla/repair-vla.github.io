@@ -60,11 +60,11 @@ Grocery Bagging currently includes video for Phase 1 only. The complete failure 
 
 ### RLT vs REPAIR
 
-The dual-arm peg insertion comparison uses the complete supplied successful clips, with RLT on the left and REPAIR on the right:
+The dual-arm peg insertion comparison uses pre-release excerpts of the supplied successful clips, with RLT on the left and REPAIR on the right:
 
-- RLT: `dual_peg_insert_rlt_success_from30s_5x_noaudio.mp4` (7.92 s).
-- REPAIR: `dual_peg_insert_success_2_from20s_5x_noaudio.mp4` (3.76 s).
+- RLT: `dual_peg_insert_rlt_success_from30s_5x_noaudio.mp4` (source 7.92 s; retained 0–6.72 s).
+- REPAIR: `dual_peg_insert_success_2_from20s_5x_noaudio.mp4` (source 3.76 s; retained 0–3.20 s).
 
-Both supplied clips are already at 5× speed. Their 1–2 s windows are slowed by a factor of five, so this part plays at 1× real time on both sides. The RLT window is labeled “Policy-switch jitter”; the matched REPAIR window and playback speeds are also labeled. Chapter controls jump to the full comparison, switching detail, or execution after the switch.
+Both supplied clips are already at 5× speed. Only the latter half of their previous 1–2 s slow-motion windows is retained in slow motion: 1.52–2.00 s, aligned to the source's 25 fps frame boundaries. This 0.48 s window is slowed by a factor of five, giving 2.40 s at 1× real time on both sides. The first half returns to the supplied playback speed. The RLT window is labeled “Policy-switch jitter”; the matched REPAIR window and playback speeds are also labeled. Chapter controls jump to the full comparison, switching detail, or execution after the switch.
 
-The replay window occupies playback seconds 1–6. Outside it, the supplied speed is preserved. RLT finishes at 11.92 s; REPAIR finishes at 7.76 s and holds its labeled final frame until 11.92 s. These playback times include the slow-motion window and are not raw task-completion measurements. Both silent outputs use the same 1280 × 800 format as the SFT comparison and have source metadata removed.
+The replay window occupies playback seconds 1.52–3.92. Outside it, the supplied speed is preserved. Both excerpts stop before gripper release, excluding the subsequent peg drop. RLT's excerpt ends at 8.64 s; REPAIR's ends at 5.12 s and holds its labeled pre-release frame until 8.64 s. These playback times include the slow-motion window and are not raw task-completion measurements. Both silent outputs use the same 1280 × 800 format as the SFT comparison and have source metadata removed.
