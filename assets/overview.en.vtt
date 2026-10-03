@@ -1,0 +1,211 @@
+WEBVTT
+
+00:00.500 --> 00:04.225
+This is REPAIR: Beyond Policy
+Patches, Distilling Reinforcement
+
+00:04.225 --> 00:07.212
+Learning Specialists into
+Vision Language Action Policies.
+
+00:08.000 --> 00:10.525
+Our key idea is to transfer local robotic
+
+00:10.525 --> 00:13.250
+expertise into a single policy for deployment.
+
+00:15.340 --> 00:19.140
+A vision language action policy can
+handle much of a manipulation task,
+
+00:19.252 --> 00:23.040
+yet fail during a brief phase that
+demands precise contact or alignment.
+
+00:23.815 --> 00:27.515
+A lightweight reinforcement learning
+specialist can learn that local skill.
+
+00:28.303 --> 00:32.615
+However, keeping specialists at deployment
+adds extra controllers and handoffs.
+
+00:33.390 --> 00:36.478
+Even successful specialist
+execution can be jittery,
+
+00:36.602 --> 00:38.902
+as the position traces in the paper show.
+
+00:41.020 --> 00:43.157
+This naturally motivates us to distill the
+
+00:43.157 --> 00:45.695
+specialists’ expertise back into the VLA.
+
+00:46.482 --> 00:50.295
+Simply cloning successful specialist
+trajectories leaves two problems.
+
+00:51.082 --> 00:54.132
+First, recorded actions can
+contain abrupt corrections
+
+00:54.132 --> 00:56.520
+and jitter, which become imitation targets.
+
+00:57.295 --> 01:01.045
+Second, the student visits states
+that differ from the teacher's states.
+
+01:01.820 --> 01:04.907
+The paper's feature projection
+illustrates this mismatch.
+
+01:05.682 --> 01:08.258
+Small student errors can
+accumulate in regions where
+
+01:08.258 --> 01:10.795
+offline training supplies
+too little supervision.
+
+01:12.900 --> 01:15.625
+REPAIR uses frozen, phase specific specialists
+
+01:15.625 --> 01:17.925
+as teachers for the VLA's action expert.
+
+01:18.700 --> 01:21.000
+It begins with an offline warm start using
+
+01:21.000 --> 01:23.637
+observations from specialist
+assisted rollouts.
+
+01:24.400 --> 01:27.738
+It then adds observations from
+the student's own execution.
+
+01:28.525 --> 01:31.675
+Both stages share the same
+value guided supervision rule.
+
+01:32.462 --> 01:36.112
+In critical phases, the student
+learns from expert candidates.
+
+01:36.887 --> 01:41.400
+Outside those phases, replayed VLA
+actions help retain existing behavior.
+
+01:43.500 --> 01:45.950
+At each critical observation, the selected
+
+01:45.950 --> 01:48.588
+specialist proposes multiple action chunks.
+
+01:49.363 --> 01:51.300
+Its critic scores the candidates.
+
+01:52.062 --> 01:54.625
+REPAIR normalizes these
+scores within the candidate
+
+01:54.625 --> 01:56.812
+group and converts them into soft weights.
+
+01:57.600 --> 01:59.450
+Weighted flow matching then gives higher
+
+01:59.450 --> 02:01.900
+value alternatives more influence on training.
+
+02:02.688 --> 02:05.275
+This transfers a distribution
+of useful actions,
+
+02:05.400 --> 02:08.450
+while reducing reliance on any
+single recorded correction.
+
+02:10.580 --> 02:13.242
+We evaluate REPAIR on six real-robot tasks:
+
+02:13.430 --> 02:16.430
+two short-horizon tasks and
+four long-horizon tasks.
+
+02:18.540 --> 02:21.765
+Each method is evaluated
+for 30 trials per task.
+
+02:22.540 --> 02:25.502
+REPAIR matches RLT with 30 out of 30 successes
+
+02:25.502 --> 02:28.415
+on all six tasks, while
+deploying a single VLA.
+
+02:30.540 --> 02:33.678
+REPAIR reduces mean
+end-effector jerk by 29.8 to
+
+02:33.678 --> 02:37.878
+67.5 percent relative to
+RLT across all six tasks.
+
+02:38.665 --> 02:41.590
+Jerk is measured over
+complete successful episodes.
+
+02:43.700 --> 02:46.400
+On dual peg insertion,
+value-weighted candidates
+
+02:46.400 --> 02:49.438
+improve offline success from 60 to 90 percent.
+
+02:50.225 --> 02:53.300
+With 15 distillation rollouts,
+adding student-visited
+
+02:53.300 --> 02:56.762
+states reaches 100 percent
+on both evaluated tasks.
+
+02:58.900 --> 03:01.750
+Accelerated demonstrations:
+stick pick-and-place,
+
+03:01.850 --> 03:04.175
+single-arm insertion, and dual-arm insertion.
+
+03:06.300 --> 03:08.987
+At ten times speed: grocery bagging, bimanual
+
+03:08.987 --> 03:11.400
+table clearing, and toy stowing in a drawer.
+
+03:14.900 --> 03:18.388
+REPAIR consolidates local reinforcement
+learning expertise through
+
+03:18.388 --> 03:21.862
+value guided targets and supervision
+on student visited states.
+
+03:22.625 --> 03:25.725
+In the reported six task
+evaluation, it achieves thirty
+
+03:25.725 --> 03:28.912
+successes per task and lower
+jerk than specialist takeover.
+
+03:29.700 --> 03:32.350
+The final system deploys a single VLA.
+
+03:33.138 --> 03:36.388
+More demonstrations are
+available on the project website.

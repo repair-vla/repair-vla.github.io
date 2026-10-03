@@ -2,7 +2,7 @@
 
 Anonymous project page for **Beyond Policy Patches: Distilling RL Specialists into Vision-Language-Action Policies**.
 
-This repository contains the project homepage, six real-robot demonstration playlists, and the paper abstract. It is a static website with no third-party scripts or analytics.
+This repository contains the project homepage, a narrated research overview, six real-robot demonstration playlists, and the paper abstract. It is a static website with no third-party scripts or analytics.
 
 ## Local preview
 
@@ -19,7 +19,9 @@ The organization homepage repository is `repair-vla/repair-vla.github.io`. In Se
 - `app.js`: carousel and video player.
 - `assets/`: web-ready videos and poster images.
 
-All web videos are muted and have source metadata removed. The homepage plays one complete selected recording from each of the six tasks, in order, at original speed. The resulting sequence is 268.20 seconds long; no task is truncated.
+The Overview section contains the complete 3:38 introduction at 1080p, with narration, optional English captions, and native playback controls. It starts only when the visitor presses play. The video and audio are preserved without re-encoding; source metadata is removed.
+
+The background and demonstration videos are muted and have source metadata removed. The homepage plays one complete selected recording from each of the six tasks, in order, at original speed. The resulting sequence is 268.20 seconds long; no task is truncated.
 
 | Task | Homepage duration | Demo recordings |
 | --- | ---: | --- |

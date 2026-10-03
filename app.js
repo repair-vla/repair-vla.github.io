@@ -102,6 +102,7 @@ function openViewer(demo, index) {
   document.querySelector('#videoTitle').textContent = demo.title;
   resumeHero = !hero.paused;
   hero.pause();
+  document.querySelector('#overviewVideo').pause();
   viewer.showModal();
   syncMotion();
   playViewerClip(index);
