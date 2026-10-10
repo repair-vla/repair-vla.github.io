@@ -54,9 +54,9 @@ All eight supplied failure clips are retained in full. The success excerpts are 
 | Dual-Arm Peg Insertion | `dual_peg_insert_success.MP4` | Phase 1: 24–45.6 | 32.20 s |
 | Bimanual Table Clearing | `clean_desk_success_v0.MP4` | Phase 1: 45–56; Phase 2: 56–66 | 24.60 s |
 | Toy Stowing in a Drawer | `pull_drawer_success_video.MP4` | Phase 1: 30–40; Phase 2: 40–51 | 30.44 s |
-| Grocery Bagging | `bagging_success.mp4` | Phase 1: 23–30; Phase 2: 30–36; Phase 3: 38–49 | 42.68 s |
+| Grocery Bagging | `bagging_success.mp4` | Phase 1: 23–30; Phase 2: 30–36; Phase 3: 38–49 | 47.68 s |
 
-Grocery Bagging splits the supplied SFT recording into unsuccessful chips-grasp attempts (0–15.60 s) and failed chips placement (15.60–26.28 s). REPAIR has three separate excerpts: grasping the chips, placing the chips, and placing the biscuits. The earlier bottle-handling action is excluded. Phase starts are 0, 17.40, and 29.88 s in the paired montage. During REPAIR's third phase, the SFT panel keeps the labeled final frame of its second phase; the chips failure is not relabeled or replayed as a biscuit failure. All three phase buttons are playable, and the failure descriptions remain below the videos.
+Grocery Bagging splits the supplied SFT recording into unsuccessful chips-grasp attempts (0–15.60 s) and failed chips placement (15.60–26.28 s). Phase 3 uses a 16-second biscuit-placement failure clip: the packet presses against the right edge of the bag and falls onto the table. REPAIR has three separate excerpts: grasping the chips, placing the chips, and placing the biscuits. The earlier bottle-handling action is excluded. Phase starts are 0, 17.40, and 29.88 s in the paired montage. The shorter REPAIR excerpt holds its final frame while the third failure clip finishes. All three phase buttons are playable, and the failure descriptions remain below the videos.
 
 ### RLT vs REPAIR
 

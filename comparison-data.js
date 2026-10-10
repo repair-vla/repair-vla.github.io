@@ -107,7 +107,7 @@ const comparisonTasks = [
   {
     "id": "bagging",
     "title": "Grocery Bagging",
-    "duration": 42.68,
+    "duration": 47.68,
     "phases": [
       {
         "title": "Grasping the chips",
@@ -131,23 +131,22 @@ const comparisonTasks = [
       },
       {
         "title": "Placing the biscuits",
-        "failure": "The biscuits can press against the bag rim during placement and fail to enter the bag.",
+        "failure": "The biscuit packet presses against the right edge of the bag and falls onto the table instead of entering the bag.",
         "success": "Lifts the biscuit packet, lowers it through the opening, and releases it inside the bag.",
         "successDuration": 11,
-        "failureDuration": 0,
-        "duration": 12.8,
+        "failureDuration": 16,
+        "duration": 17.8,
         "start": 29.88,
         "available": true
       }
     ],
     "sources": [
-      "assets/comparison/bagging-failure.mp4?v=2",
-      "assets/comparison/bagging-success.mp4?v=2"
+      "assets/comparison/bagging-failure.mp4?v=3",
+      "assets/comparison/bagging-success.mp4?v=3"
     ],
     "posters": [
-      "assets/comparison/bagging-failure.jpg?v=2",
-      "assets/comparison/bagging-success.jpg?v=2"
-    ],
-    "note": "Original playback speed. The two chips-handling phases start together. During REPAIR's biscuit placement, the SFT panel holds the final frame of its chips-placement failure. Each pair loops together."
+      "assets/comparison/bagging-failure.jpg?v=3",
+      "assets/comparison/bagging-success.jpg?v=3"
+    ]
   }
 ];
