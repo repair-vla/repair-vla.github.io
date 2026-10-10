@@ -11,6 +11,8 @@
     const time = find('Time');
     const status = find('Status');
     const fullscreen = find('Fullscreen');
+    const note = find('Note');
+    const defaultNote = note?.textContent;
     seek.setAttribute('aria-label', `${playerLabel} playback position`);
     find('Restart').setAttribute('aria-label', `Restart both ${playerLabel} videos`);
     fullscreen.setAttribute('aria-label', `Show ${playerLabel} full screen`);
@@ -114,7 +116,7 @@
 
     function renderCaption(phase, index, side) {
       if (!phase[side]) return '';
-      return `<div class="comparison-caption" data-phase="${index}"><h6>Phase ${index + 1} · ${phase.title}</h6><p>${phase[side]}</p>${phase.available ? '' : '<small>Caption only · Video not yet available</small>'}</div>`;
+      return `<div class="comparison-caption" data-phase="${index}"><h6>Phase ${index + 1} · ${phase.title}</h6><p>${phase[side]}</p></div>`;
     }
 
     function selectTask(index) {
@@ -130,13 +132,9 @@
       const count = current.phases.filter(phase => phase.available).length;
       find('PhaseCount').textContent = phaseNames ? (count === current.phases.length ? `${count} ${count === 1 ? 'phase' : 'phases'}` : `${count} / ${current.phases.length} phases shown`) : 'Successful rollouts';
       taskButtons?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(index === i)));
-      phaseButtons.innerHTML = current.phases.map((phase, i) => `<button type="button" ${phase.available ? '' : 'disabled'}>${phaseNames ? `Phase ${i + 1} · ` : ''}${phase.title}${phase.available ? '' : '<small>Caption only</small>'}</button>`).join('');
+      phaseButtons.innerHTML = current.phases.map((phase, i) => `<button type="button" ${phase.available ? '' : 'disabled'}>${phaseNames ? `Phase ${i + 1} · ` : ''}${phase.title}</button>`).join('');
       phaseButtons.querySelectorAll('button').forEach((button, i) => button.addEventListener('click', () => { seekPair(current.phases[i].start); playPair(); }));
-      const availability = find('Availability');
-      if (availability) {
-        availability.hidden = count === current.phases.length;
-        availability.textContent = count === current.phases.length ? '' : 'Only Phase 1 is shown for Grocery Bagging. Failure descriptions for Phases 2 and 3 are included below; their videos are not yet available.';
-      }
+      if (note) note.textContent = current.note ?? defaultNote;
       if (renderCaptions) {
         find('FailureCaption').innerHTML = current.phases.map((phase, i) => renderCaption(phase, i, 'failure')).join('');
         find('SuccessCaption').innerHTML = current.phases.map((phase, i) => renderCaption(phase, i, 'success')).join('');

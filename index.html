@@ -67,7 +67,6 @@
         <div id="comparisonTasks" class="comparison-tasks" role="group" aria-label="Choose a comparison task"></div>
         <div class="comparison-task-heading"><h4 id="comparisonTaskTitle">Stick Pick-and-Place</h4><span id="comparisonPhaseCount"></span></div>
         <div id="comparisonPhases" class="comparison-phases" role="group" aria-label="Jump to a phase"></div>
-        <p id="comparisonAvailability" class="comparison-availability" hidden></p>
         <div id="comparisonMedia" class="comparison-media">
           <div class="comparison-pair">
             <figure class="comparison-figure failure-side">
@@ -88,7 +87,7 @@
           </div>
           <p id="comparisonStatus" class="comparison-status" role="status" aria-live="polite"></p>
         </div>
-        <p class="comparison-note">Original playback speed. Phases start together; shorter clips hold their last frame until the next phase. Each pair loops together.</p>
+        <p id="comparisonNote" class="comparison-note">Original playback speed. Phases start together; shorter clips hold their last frame until the next phase. Each pair loops together.</p>
         <div class="comparison-captions">
           <div><h5 class="comparison-caption-heading">SFT failure modes</h5><div id="comparisonFailureCaption"></div></div>
           <div><h5 class="comparison-caption-heading">Successful REPAIR execution</h5><div id="comparisonSuccessCaption"></div></div>
@@ -143,8 +142,8 @@
     <div class="playlist-controls"><button id="clipPrev" aria-label="Previous recording">← Previous</button><span id="clipPosition" aria-live="polite"></span><button id="clipNext" aria-label="Next recording">Next →</button></div>
   </dialog>
   <script src="app.js"></script>
-  <script src="comparison-data.js"></script>
+  <script src="comparison-data.js?v=2"></script>
   <script src="rlt-comparison-data.js?v=2"></script>
-  <script src="comparison.js"></script>
+  <script src="comparison.js?v=2"></script>
 </body>
 </html>

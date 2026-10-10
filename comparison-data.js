@@ -107,28 +107,47 @@ const comparisonTasks = [
   {
     "id": "bagging",
     "title": "Grocery Bagging",
-    "duration": 28.08,
+    "duration": 42.68,
     "phases": [
       {
         "title": "Grasping the chips",
-        "failure": "An inaccurate grasp on the chips container leads to an unstable pickup or loss of the object.",
-        "success": "Secures the chips container and lifts it toward the bag.",
-        "available": true,
+        "failure": "An inaccurate grasp position causes repeated unsuccessful attempts to pick up the chips container.",
+        "success": "Grasps the chips container securely and lifts it clear of the table.",
+        "successDuration": 7,
+        "failureDuration": 15.6,
+        "duration": 17.4,
         "start": 0,
-        "duration": 28.08,
-        "failureDuration": 26.28,
-        "successDuration": 10
+        "available": true
       },
       {
         "title": "Placing the chips",
-        "available": false,
-        "failure": "The chips container presses against the bag rim during placement and fails to enter the bag."
+        "failure": "The chips container presses against the bag rim, misses the opening, and falls onto the table.",
+        "success": "Guides the chips container through the bag opening and releases it inside.",
+        "successDuration": 6,
+        "failureDuration": 10.68,
+        "duration": 12.48,
+        "start": 17.4,
+        "available": true
       },
       {
         "title": "Placing the biscuits",
-        "available": false,
-        "failure": "The biscuits press against the bag rim during placement and fail to enter the bag."
+        "failure": "The biscuits can press against the bag rim during placement and fail to enter the bag.",
+        "success": "Lifts the biscuit packet, lowers it through the opening, and releases it inside the bag.",
+        "successDuration": 11,
+        "failureDuration": 0,
+        "duration": 12.8,
+        "start": 29.88,
+        "available": true
       }
-    ]
+    ],
+    "sources": [
+      "assets/comparison/bagging-failure.mp4?v=2",
+      "assets/comparison/bagging-success.mp4?v=2"
+    ],
+    "posters": [
+      "assets/comparison/bagging-failure.jpg?v=2",
+      "assets/comparison/bagging-success.jpg?v=2"
+    ],
+    "note": "Original playback speed. The two chips-handling phases start together. During REPAIR's biscuit placement, the SFT panel holds the final frame of its chips-placement failure. Each pair loops together."
   }
 ];
